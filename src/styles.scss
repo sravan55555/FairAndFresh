@@ -1,2 +1,80 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/dist/css/bootstrap.min.css'
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~ngx-toastr/toastr.css';
+
+
+
+.loginFair .page-header.login-page {
+    background-image: url('./assets/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.loginFair img {
+    max-width: 100%;
+}
+
+#header{
+    background: #6a2c2c;
+}
+
+
+.loginFair .page-header {
+    height: 100vh;
+    min-height: -moz-available;
+    min-height: stretch;
+    background-position: center center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    display: flex;
+    align-items: center;
+}
+
+.loginFair .page-header .container img {
+    width: 85px;
+    margin-left: 35%;
+}
+
+.loginFair .card .card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.loginFair .card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    // width: 400px;
+}
+
+.loginFair .btn-add {
+    background: #00853e !important;
+}
+
+.loginFair .card-footer {
+    text-align: center;
+}
+
+.loginFair .card-footer button {
+    color: white;
+    font-size: 14px;
+}
+
+.loginFair .login {
+    // height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin-left: -50px;
+
+}
