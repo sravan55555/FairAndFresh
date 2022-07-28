@@ -8,7 +8,7 @@ const routes: Routes = [
     pathMatch:'full'
   },
   {
-    path: 'user',
+    path: '',
     loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
   },
   {

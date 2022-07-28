@@ -47,5 +47,10 @@ export class DataService {
       .pipe(map(response => this.format_response(response)), catchError(this.handleError));
   }
 
+  get(url: any, headers: any) {
+    return this.httpClient.get(url, { headers: headers })
+      .pipe(map(response => this.format_response(response)), catchError(this.handleError));
+  }
+
 
 }

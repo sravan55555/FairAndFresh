@@ -29,8 +29,12 @@ export class LoginService extends DataService {
   }
 
   getAuthToken(resource) {
-    console.log('login service',resource)
     return this.post(this.loginBaseApiUrl+'adminuser/login', resource, this.get_headers());
+  }
+
+
+  getAdminUserEmail(data){
+    return this.get(this.loginBaseApiUrl+'adminuser/forgetpassword/'+data.email, this.get_headers());
   }
 
  
