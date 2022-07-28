@@ -14,7 +14,7 @@ const routes: Routes = [
     component:ForgetpasswordComponent
   },
   {
-    path:'updatepassword',
+    path:'updatepassword/:id',
     component:UpdatepasswordComponent
   }
 ];

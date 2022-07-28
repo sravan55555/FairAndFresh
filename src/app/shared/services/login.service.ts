@@ -34,7 +34,15 @@ export class LoginService extends DataService {
 
 
   getAdminUserEmail(data){
-    return this.get(this.loginBaseApiUrl+'adminuser/forgetpassword/'+data.email, this.get_headers());
+    return this.get(this.loginBaseApiUrl+'adminuser/getUserData/'+data.email, this.get_headers());
+  }
+
+  getUserData(data){
+    return this.get(this.loginBaseApiUrl+'adminuser/getUserId/'+data.userId, this.get_headers());
+  }
+
+  updateUser(data){
+    return this.post(this.loginBaseApiUrl+'adminuser/updateUser',data, this.get_headers()); 
   }
 
  

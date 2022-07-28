@@ -46,7 +46,7 @@ export class ForgetpasswordComponent implements OnInit {
       this.loginService.getAdminUserEmail(this.forgetForm.value).subscribe(resp => {
         let data = resp;
         if (data && data['status']) {
-          this.router.navigate(['login/updatepassword']);
+          this.router.navigate(['login/updatepassword',data['userDetails']._id]);
         } else {
           console.log(data['msg'])
           this.toastr.error(data['msg'], '', { timeOut: 3000 });

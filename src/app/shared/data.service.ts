@@ -42,7 +42,7 @@ export class DataService {
   }
 
   post(url: any, resources: any, headers: any) {
-    console.log(url,resources,headers)
+    console.log(url, resources, headers)
     return this.httpClient.post(url, resources, headers)
       .pipe(map(response => this.format_response(response)), catchError(this.handleError));
   }
@@ -51,6 +51,8 @@ export class DataService {
     return this.httpClient.get(url, { headers: headers })
       .pipe(map(response => this.format_response(response)), catchError(this.handleError));
   }
+
+
 
 
 }
