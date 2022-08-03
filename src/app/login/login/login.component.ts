@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthenticationService } from 'src/app/shared/services/authentication.service';
+import { LoginService } from 'src/app/shared/services/login.service';
 
 
 @Component({
@@ -18,7 +20,9 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private toastr: ToastrService,
-    private auth: AuthenticationService,) { }
+    private auth: AuthenticationService,
+    private router: Router ,
+    private loginService:LoginService) { }
 
   ngOnInit(): void {
     this.emailForm();
@@ -45,8 +49,9 @@ export class LoginComponent implements OnInit {
         console.log('response',response)
         let data = response
         if (data && data['status']) {
+          this.loginService.fairAndFreshLoginStatus.next(true);
           this.toastr.success('login successfully', '', {timeOut: 1000});
-          // this.router.navigate(['dashboard']);
+          this.router.navigate(['dashboard']);
         } else {
           console.log(data['msg'])
           this.toastr.error(data['msg'], '', {timeOut: 3000});

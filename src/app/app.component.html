@@ -1,1 +1,9 @@
-<router-outlet></router-outlet>
+<div *ngIf="!isLoginStatus">
+    <router-outlet></router-outlet>
+</div>
+
+
+<div class="layout" *ngIf="isLoginStatus">
+    <app-sidebar></app-sidebar>
+    <router-outlet></router-outlet>
+</div>
